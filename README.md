@@ -40,15 +40,27 @@ The blue bar chart indicates missing factor data, and the longer the blue bar ch
 
 The following paragraph shows six correlation matrix, the first paragraph contains all the factors, and the remaining five correlation matrices correspond to the five partitions of factors in method 3 (module based data model).
 
+a. Correlation_all
+
 ![image](figure/Correlation_all.png)
+
+b. Correlation_financial
 
 ![image](figure/Correlation_financial.png)
 
+c. Correlation_internal
+
 ![image](figure/Correlation_internal.png)
+
+d. Correlation_AA_only
 
 ![image](figure/Correlation_AA_only.png)
 
+e. Correlation_BB_only
+
 ![image](figure/Correlation_BB_only.png)
+
+f. Correlation_Segment
 
 ![image](figure/Correlation_Segment.png)
 
