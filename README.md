@@ -8,7 +8,7 @@ We know that machine learning can perform classification tasks well. In practica
 
 2. Compare different classifier model.
 
-3. Use confusion matrix and Area under the RUC curve (AUC)
+3. Use confusion matrix and Area under the ROC curve (AUC)
 
 ### Introduction
 1. Segment-based data and Module-based data
