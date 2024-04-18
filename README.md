@@ -36,6 +36,22 @@ Our Dataset provided can be divided into 5 part, which are Target Variable, Segm
 
 The blue bar chart indicates missing factor data, and the longer the blue bar chart, the more missing factor data there is.
 
+4. Correlation Matrix
+
+The following paragraph shows six correlation matrix, the first paragraph contains all the factors, and the remaining five correlation matrices correspond to the five partitions of factors in method 3 (module based data model).
+
+![image](figure/Correlation_all.png)
+
+![image](figure/Correlation_financial.png)
+
+![image](figure/Correlation_internal.png)
+
+![image](figure/Correlation_AA_only.png)
+
+![image](figure/Correlation_BB_only.png)
+
+![image](figure/Correlation_Segment.png)
+
 4. Oversampling
 
 ![image](figure/Oversampling.png)
