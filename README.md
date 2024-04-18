@@ -4,8 +4,8 @@ For MLF final project
 
 Student Name | Student ID
 :---------  | ---------
-Zhang Yuyang| 2301212424
-Ge Ruiyang| 2301212326
+Yang Honggui| 2301212407
+Chen Yichao| 2301212314
 
 ## Proposal: Credit Analysis of Module-based and Segment-based Data 
 ### Motivation
