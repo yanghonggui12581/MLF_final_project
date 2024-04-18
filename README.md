@@ -64,13 +64,17 @@ f. Correlation_Segment
 
 ![image](figure/Correlation_Segment.png)
 
-4. Oversampling
+5. Oversampling
+
+There is an imbalance in the sample of data.
+
+![image](figure/ModelChoice_Default_Flag.png)
 
 ![image](figure/Oversampling.png)
 
 Copy minority class samples to increase their quantity, matching them with the number of majority class samples, achieves a class balance.
 
-5. Three Method
+6. Three Method
 
 a. Full Data Model
 
