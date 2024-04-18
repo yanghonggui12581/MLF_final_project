@@ -32,9 +32,11 @@ Our Dataset provided can be divided into 5 parts, which are Target Variable, Seg
 
 3. The situation of missing data
 
-![image](figure/The_situation_of_missing_data.png)
+![image](figure/Missing_value.png)
 
 The blue bar chart indicates missing factor data, and the longer the blue bar chart, the more missing factor data there is.
+
+![image](figure/The_situation_of_missing_data.png)
 
 4. Correlation Matrix
 
