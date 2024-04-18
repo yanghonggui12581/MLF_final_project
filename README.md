@@ -1,5 +1,12 @@
 # MLF_Final_project
 For MLF final project
+## Team Member
+
+Student Name | Student ID
+:---------  | ---------
+Zhang Yuyang| 2301212424
+Ge Ruiyang| 2301212326
+
 ## Proposal: Credit Analysis of Module-based and Segment-based Data 
 ### Motivation
 We know that machine learning can perform classification tasks well. In practical life, people often hope to predict specific situations through certain factors to determine their categories, such as having a series of characteristics of bank customers and determining whether they have defaulted.
