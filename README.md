@@ -11,48 +11,52 @@ We know that machine learning can perform classification tasks well. In practica
 3. Use confusion matrix and Area under the RUC curve (AUC)
 
 ### Introduction
-1.Segment-based data and Module-based data
+1. Segment-based data and Module-based data
 
 ![image](figure/Segment-based_data_and_Module-based_data.png)
 
-2.Our research framework
+2. Our Research Framework
 
 ![image](figure/Our_research_framework.png)
 
 ### Data Processing
-1.Select 102 features data from Transformed_data_v1.0_Final.csv. 
+1. Select 102 features data from Transformed_data_v1.0_Final.csv. 
 
-2.Descriptive Analysis of Raw Data
+Our Dataset provided can be divided into 5 part, which are Target Variable, Segment, Financial, Bureau, and Internal Behavior. For each category, we have listed some typical variables and their corresponding descriptions below that category.
+
+![image](figure/Dataset_Provided.png)
+
+2. Descriptive Analysis of Raw Data
 
 ![image](figure/Descriptive_Analysis_of_Raw_Data.png)
 
-3.The situation of missing data
+3. The situation of missing data
 
 ![image](figure/The_situation_of_missing_data.png)
 
 The blue bar chart indicates missing factor data, and the longer the blue bar chart, the more missing factor data there is.
 
-4.Oversampling
+4. Oversampling
 
 ![image](figure/Oversampling.png)
 
 Copy minority class samples to increase their quantity, matching them with the number of majority class samples, achieves a class balance.
 
-5.Three Method
+5. Three Method
 
-a.Full Data Model
+a. Full Data Model
 
 Directly fill in all the values and construct the largest complete model.
 
 ![image](figure/Full_Data_Model.png)
 
-b.Segment-based Data Model
+b. Segment-based Data Model
 
 Group them into different segments, and fill in missing values within each segment. The final prediction is also calculated based on different segments, including AA, BB, and VV.
 
 ![image](figure/Segment-based_Data_Model.png)
 
-c.Module-based Data Model
+c. Module-based Data Model
 
 Begin by constructing models for variables within distinct 5 groups. After splitting factors, in each groups, constructing classifier model. For example, we need to integrate the models corresponding to the pink blocks in the row where AA is located to obtain the final prediction result. 
 
@@ -72,13 +76,17 @@ Splitting of Test Datasets
 
 ### Classifier Model We Use
 
-1.Logistic Regression Model
+We use pipeline to pack SimpleImputer, StandardScaler, and the following four models; then use gridsearch to find the optimal parameter. 
 
-2.Random Forest Model
+![image](figure/Pipeline.png)
 
-3.XGBOOST Model
+1. Logistic Regression Model
 
-4.LGB Model
+2. Random Forest Model
+
+3. XGBOOST Model
+
+4. LGB Model
 
 ![image](figure/Classifier_Model_We_Use.png)
 
@@ -86,15 +94,15 @@ In each model, we randomly select 80% as training set, 20% as test set.
 
 ### Result of Each Method and Evaluation 
 
-1.Method 1: Full Data Model
+1. Method 1: Full Data Model
 
 ![image](figure/Method_1_Full_Data_Model.png)
 
-2.Method 2: Segment-based Data Model
+2. Method 2: Segment-based Data Model
 
 ![image](figure/Method_2_Segment-based_Data_Model.png)
 
-3.Method 3: Module-based Data Model
+3. Method 3: Module-based Data Model
 
 ![image](figure/Method_3_Module-based_Data_Model.png)
 
