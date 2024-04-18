@@ -117,52 +117,54 @@ We use pipeline to pack SimpleImputer, StandardScaler, and the following four mo
     from sklearn.preprocessing import StandardScaler
     from sklearn.decomposition import PCA
     from sklearn.model_selection import GridSearchCV
-
-    def bestCofLR(train_X, train_y, best_params = None, class_weight=None):
-        # 定义一个 pipeline，其中包含预处理和逻辑回归
+    
+    def bestCofLR(train_X, train_y, best_params=None, class_weight=None):
+        # Define a pipeline that includes preprocessing and logistic regression
         pipeline = Pipeline([
-            ('imputer', SimpleImputer(strategy='mean')),  # 缺失值处理
-            ('scaler', StandardScaler()),  # 数据标准化
-            ('pca', PCA()),  # 主成分分析
-            ('classifier', LogisticRegression())  # 逻辑回归分类器
+            ('imputer', SimpleImputer(strategy='mean')),  # Handle missing values
+            ('scaler', StandardScaler()),  # Data standardization
+            ('pca', PCA()),  # Principal Component Analysis
+            ('classifier', LogisticRegression())  # Logistic Regression classifier
         ])
+        
         if best_params:
-            # 检查 best_params 中的每个参数值列表是否只有一个元素
+            # Check if each parameter value list in best_params only has one element
             if all(len(v) == 1 for v in best_params.values()):
-                # 如果每个列表只有一个值，则应用这些参数并训练模型
-                # 需要从列表中提取每个参数的单个值
+                # If each list has only one value, then apply these parameters and train the model
+                # Extract each parameter's single value from the list
                 single_params = {k: v[0] for k, v in best_params.items()}
                 if class_weight:
-                    single_params['classifier__class_weight'] = class_weight  # 添加 class_weight
+                    single_params['classifier__class_weight'] = class_weight  # Add class_weight
                 pipeline.set_params(**single_params)
                 pipeline.fit(train_X, train_y)
                 print("Parameters used:", single_params)
                 return pipeline
             else:
-                # 使用网格搜索
+                # Use grid search
                 param_grid = best_params
         else:
-            # 定义参数网格，同时搜索 PCA 的组件数和逻辑回归的 C 值
+            # Define a parameter grid, searching both the number of PCA components and the C value for logistic regression
             param_grid = {
                 'pca__n_components': [7, 9, 11, 13, 15, 17],
                 'classifier__C': [0.0001, 0.001, 0.01]
             }
-
+    
         if class_weight:
             param_grid['classifier__class_weight'] = [class_weight]
             
-        # 创建一个 GridSearchCV 对象，以 pipeline 为基础进行参数搜索
+        # Create a GridSearchCV object based on the pipeline to conduct the parameter search
         grid_search = GridSearchCV(pipeline, param_grid, cv=5, scoring='f1')
-
-        # 使用 GridSearchCV 对象训练模型
+    
+        # Use the GridSearchCV object to train the model
         grid_search.fit(train_X, train_y)
-
-        # 输出最优的参数组合
+    
+        # Output the best parameter combination
         best_params = grid_search.best_params_
         print("Best parameters:", best_params)
-
-        # 返回 GridSearchCV 对象、准确率、预测结果和预测概率
+    
+        # Return the GridSearchCV object
         return grid_search
+
 ```
 
 2. Random Forest Model
