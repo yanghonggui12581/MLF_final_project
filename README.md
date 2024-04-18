@@ -22,7 +22,7 @@ We know that machine learning can perform classification tasks well. In practica
 ### Data Processing
 1. Select 102 features data from Transformed_data_v1.0_Final.csv. 
 
-Our Dataset provided can be divided into 5 part, which are Target Variable, Segment, Financial, Bureau, and Internal Behavior. For each category, we have listed some typical variables and their corresponding descriptions below that category.
+Our Dataset provided can be divided into 5 parts, which are Target Variable, Segment, Financial, Bureau, and Internal Behavior. For each category, we have listed some typical variables and their corresponding descriptions below that category.
 
 ![image](figure/Dataset_Provided.png)
 
