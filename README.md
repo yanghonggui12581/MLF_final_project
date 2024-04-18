@@ -135,6 +135,7 @@ We use pipeline to pack SimpleImputer, StandardScaler, and the following four mo
 
         # 返回 GridSearchCV 对象、准确率、预测结果和预测概率
         return grid_search
+'''
 
 2. Random Forest Model
 
